@@ -24,6 +24,33 @@ function draw(){
     fill("#ff0000");
     stroke("#ff0000");
 
+    circle(rightWristX, rightWristY, 20);
+
+    if(rightWristY > 0  && rightWristY <= 100){
+        document.getElementById("speed").innerHTML="Speed=0.5x";
+        song.rate(0.5);
+    }
+
+    if(rightWristY > 100  && rightWristY <= 200){
+        document.getElementById("speed").innerHTML="Speed=1.x";
+        song.rate(1);
+    }
+ 
+    if(rightWristY > 200  && rightWristY <= 300){
+        document.getElementById("speed").innerHTML="Speed=1.25x";
+        song.rate(1.25);
+    }
+    
+    if(rightWristY > 300  && rightWristY <= 400){
+        document.getElementById("speed").innerHTML="Speed=1.5x";
+        song.rate(1.5);
+    }
+
+    if(rightWristY > 400){
+        document.getElementById("speed").innerHTML="Speed=2x";
+        song.rate(2);
+    }
+
     if(scoreLeftWrist>0.2){
         circle(leftWristX, leftWristY, 20);
         InNumberleftWristY=Number(leftWristY);
